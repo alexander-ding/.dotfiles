@@ -1,0 +1,16 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = Alexander Ding
+	email = alexander.jf.ding@gmail.com
+	signingkey = 4633BA3075FB5374
+[init]
+	defaultBranch = main
+[commit]
+	gpgsign = true
+[pull]
+	rebase = true
+[alias]
+	graph = log --all --graph --decorate --oneline 
+[core]
+	excludesfile = /Users/alexanderding/.gitignore_global
