@@ -7,6 +7,9 @@ set shortmess+=IF " no start up messages
 set noerrorbells visualbell t_vb= " no error bell noises
 set autochdir " automatically set current directory to directory of last opened file
 set listchars=tab:>>,nbsp:~ " set list to see tabs and non-breakable spaces
+set tabstop=4 " how many spaces a tab takes up
+set shiftwidth=4 " pressing tab gives 4 spaces
+set expandtab " use spaces when pressing tab
 set history=8192 " more history
 set showmatch " show matching braces when text indicator is over them
 set noshowcmd " disable flashing commands
@@ -51,6 +54,19 @@ set hlsearch " highlight searches
 " open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
+
+"
+" File-type based configurations
+"
+
+filetype on " turn on file type detection
+filetype plugin on
+filetype indent on " file type based indentation
+
+" in makefiles, don't expand tabs to spaces, since actual tab characters are
+" needed, and have indentation at 8 chars to be sure that all indents are
+" tabs
+autocmd FileType make set noexpandtab 
 
 "
 " Key binding
