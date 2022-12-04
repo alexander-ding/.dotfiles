@@ -12,5 +12,13 @@
 	rebase = true
 [alias]
 	graph = log --all --graph --decorate --oneline 
+	ll = log --oneline
+	st = status
+	last = log -1 HEAD --stat
+	cm = commit -m
+	c = commit
+	rv = remote -v
+	d = diff
+	dv = difftool -t vimdiff -y
 [core]
 	excludesfile = /Users/alexanderding/.gitignore_global
