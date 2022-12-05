@@ -169,7 +169,6 @@ function snapToUnits(positionUnits)
       local targetGeom = calculateTargetGeom(positionUnits)
 
       window:moveToUnit(targetGeom)
-      correctWindowPosition(window, screen)
 
       if not matchGrid(window, targetGeom, screen) then
         snapExceptions.set(window:id(), targetGeom, window:frame())
@@ -267,8 +266,8 @@ function moveToScreen(direction)
       local functionName = ('moveOneScreen'
                              ..direction:sub(1,1):upper()
                              ..direction:sub(2):lower())
-
-      hs.window[functionName](hs.window.focusedWindow(), false, true)
+      local win = hs.window.focusedWindow()
+      win[functionName](hs.window.focusedWindow(), false, true)
       if snapAction then snapAction.exec() end
     end)
   }
