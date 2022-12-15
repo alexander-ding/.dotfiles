@@ -9,8 +9,18 @@ if [[ $(id -u) == 0 ]] && [[ "$SUDO_COMMAND" ]]; then
   exit 1
 fi
 
+if [[ $OSTYPE == 'darwin'* ]]; then
+  script_os=MacOS
+  script_pm=brew
+else
+  script_os=Linux
+  script_pm=apt
+fi
+
 echo "Detected $script_os, running installation. Your password may be requested to run privileged commands"
 echo "- package manager: $script_pm"
+
+printf "\nEnsuring root access...\n"
 
 sudo -v
 # keep-alive: update existing sudo time stamp if set, otherwise do nothing
@@ -20,13 +30,6 @@ while true; do
   kill -0 "$$" || exit
 done 2>/dev/null &
 
-if [[ $OSTYPE == 'darwin'* ]]; then
-  script_os=MacOS
-  script_pm=brew
-else
-  script_os=Linux
-  script_pm=apt
-fi
 # cd into source directory
 dir=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
 cd "$dir"
@@ -46,4 +49,5 @@ echo "- configure your IDEs to use FiraCode"
 echo "  Instructions: https://github.com/tonsky/FiraCode/wiki#enabling-ligatures"
 echo "- configure git to use your own username, email, and gpg key"
 echo "  Instructions: https://github.com/alexander-ding/.dotfiles/tree/main/docs/git.md"
+echo "- (macOS only) restart your computer to apply setting changes"
 printf "\nEnjoy!\n"
