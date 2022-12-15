@@ -9,6 +9,17 @@ if [[ $(id -u) == 0 ]] && [[ "$SUDO_COMMAND" ]]; then
   exit 1
 fi
 
+echo "Detected $script_os, running installation. Your password may be requested to run privileged commands"
+echo "- package manager: $script_pm"
+
+sudo -v
+# keep-alive: update existing sudo time stamp if set, otherwise do nothing
+while true; do
+  sudo -n true
+  sleep 60
+  kill -0 "$$" || exit
+done 2>/dev/null &
+
 if [[ $OSTYPE == 'darwin'* ]]; then
   script_os=MacOS
   script_pm=brew
@@ -16,12 +27,6 @@ else
   script_os=Linux
   script_pm=apt
 fi
-
-echo "Detected $script_os, running installation. Your password may be requested throughout the installation process to run privileged commands"
-echo "- package manager: $script_pm"
-
-sudo true # preauthorize to cache user password
-
 # cd into source directory
 dir=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
 cd "$dir"
