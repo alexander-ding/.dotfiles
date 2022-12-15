@@ -10,14 +10,14 @@ Some goodies include:
 1. shell tooling, like [fzf](https://github.com/junegunn/fzf), [broot](https://dystroy.org/broot/), and [direnv](https://direnv.net/)
 1. [vscode](https://code.visualstudio.com/) with [Firacode](https://github.com/tonsky/FiraCode) font
 1. version-managed programming languages, including [Go](https://go.dev/) ([GVM](https://github.com/moovweb/gvm)), [Python](https://www.python.org/) ([miniforge](https://github.com/conda-forge/miniforge)), [Rust](https://www.rust-lang.org/) ([rustup](https://github.com/rust-lang/rustup)), [Node.js](https://nodejs.org/en/) ([asdf](https://asdf-vm.com/)), [Java](https://www.java.com/) ([sdkman](https://sdkman.io/)), and [Julia](https://julialang.org/) ([juliaup](https://github.com/JuliaLang/juliaup))
-1. (MacOS only) cute utility programs, like [hiddenbar](https://apps.apple.com/us/app/hidden-bar/), [hammerspoon](https://www.hammerspoon.org/), and [karabiner-elements](https://karabiner-elements.pqrs.org/) for custom shortcuts
+1. (macOS only) cute utility programs, like [hiddenbar](https://apps.apple.com/us/app/hidden-bar/), [hammerspoon](https://www.hammerspoon.org/), and [karabiner-elements](https://karabiner-elements.pqrs.org/) for custom shortcuts
 
 ## Prerequisites
 
-1. A 64 bit MacOS or Debian-based Linux OS
+1. A 64 bit macOS or Debian-based Linux OS
 1. `sudo` access
 1. `git`, to clone this repository
-1. (MacOS only) XCode CLI tools. To install, run
+1. (macOS only) XCode CLI tools. To install, run
 
 ```bash
 xcode-select --install
