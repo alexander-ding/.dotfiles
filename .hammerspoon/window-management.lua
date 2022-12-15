@@ -31,20 +31,20 @@ function config()
 
     -- Snap a window to a grid on the active screen
     snapWindowLeft   = {
-      {{"cmd", "alt"}, "h"},
-      {{"cmd", "alt"}, "left"},
+      {{"cmd", "ctrl"}, "h"},
+      {{"cmd", "ctrl"}, "left"},
     },
     snapWindowRight  = {
-      {{"cmd", "alt"}, "l"},
-      {{"cmd", "alt"}, "right"},
+      {{"cmd", "ctrl"}, "l"},
+      {{"cmd", "ctrl"}, "right"},
     },
     snapWindowCenter = {
-      {{"cmd", "alt"}, "k"},
-      {{"cmd", "alt"}, "up"},
+      {{"cmd", "ctrl"}, "k"},
+      {{"cmd", "ctrl"}, "up"},
     },
     snapWindowDown   = {
-      {{"cmd", "alt"}, "j"},
-      {{"cmd", "alt"}, "down"},
+      {{"cmd", "ctrl"}, "j"},
+      {{"cmd", "ctrl"}, "down"},
     },
 
     -- Move a window to an adjacent screen

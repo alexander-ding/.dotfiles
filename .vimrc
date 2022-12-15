@@ -1,6 +1,7 @@
 "
 " Basic configurations
 "
+
 set nocompatible " make vim useful
 syntax on " syntax highlighting
 set shortmess+=IF " no start up messages
@@ -14,7 +15,6 @@ set history=8192 " more history
 set showmatch " show matching braces when text indicator is over them
 set noshowcmd " disable flashing commands
 set noshowmode " hide mode
-set clipboard=unnamed " use OS clipboard
 set wildmenu " better command-line completion
 set esckeys " allow cursor keys in insert mode
 set ttyfast " optimize for fast terminal connections
@@ -24,7 +24,7 @@ set number " show line numbers
 set relativenumber " show relative line numbers
 set title " show filename
 set backspace=indent,eol,start " intuitive backspace
-set term=screen-256color " fixes color issues
+set term=xterm-256color " fixes color issues
 set modeline
 set modelines=4
 set exrc " per-directory .vimrc
@@ -41,6 +41,7 @@ set backupskip=/tmp/*,/private/tmp/*
 "
 " Searching and navigation
 "
+
 set scrolloff=5 " start scrolling 5 lines off border
 set nostartofline " don't move cursor to start of line when moving
 set mouse=a " enable mouse scrolling
@@ -84,17 +85,30 @@ inoremap <Left>  <Nop>
 inoremap <Right> <Nop>
 inoremap <Up>    <Nop>
 inoremap <Down>  <Nop>
-" quicker window movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
+
+" copy and paste
+vmap <C-c> "+yi
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <C-r><C-o>+
 
 "
 " Plugins (I use VimPlug)
 "
+
+" Install vim-plug if not found
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+endif
+
+" Run PlugInstall if there are missing plugins
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall --sync | source $MYVIMRC
+\| endif
 call plug#begin()
 
+" Plugins and configurations
 Plug 'dracula/vim', { 'as': 'dracula' } " dracula theme
 Plug 'vim-airline/vim-airline' " powerline
 Plug 'vim-airline/vim-airline-themes'
@@ -103,6 +117,7 @@ let g:airline_theme='dracula'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#obsession#enabled = 1
 
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
@@ -111,5 +126,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 Plug 'preservim/nerdtree'
 Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-obsession'
 
 call plug#end()
