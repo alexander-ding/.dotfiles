@@ -1,4 +1,4 @@
-# Dotfiles
+# .dotfiles
 
 This is a central repository of configuration files and setup scripts to configure any fresh 64-bit OSX or Debian-based Linux environments you have root access for to replicate my workflows.
 
