@@ -59,17 +59,17 @@ sudo pmset -a lidwake 1
 # restart automatically on power loss (and regaining power)
 sudo pmset -a autorestart 1
 
-# sleep the display after 15 minutes while charging
-sudo pmset -c displaysleep 15
-
 # disable machine sleep while charging
 sudo pmset -c sleep 0
 
-# sleep the display after 5 minutes while charging
-sudo pmset -c displaysleep 5
+# sleep the display after 15 minutes while charging
+sudo pmset -c displaysleep 15
 
-# set machine sleep to 5 minutes on battery
-sudo pmset -b sleep 5
+# set machine sleep to 10 minutes on battery
+sudo pmset -b sleep 10
+
+# sleep the display after 10 minutes on battery
+sudo pmset -b displaysleep 10
 
 # set standby delay to 24 hours (default is 1 hour)
 sudo pmset -a standbydelay 86400
