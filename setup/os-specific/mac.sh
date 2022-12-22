@@ -7,14 +7,6 @@ echo "- setting sensible defaults"
 # disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
 
-# expand save panel by default
-defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
-defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
-
-# expand print panel by default
-defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
-defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
-
 # save to disk (not to iCloud) by default
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
@@ -77,9 +69,6 @@ sudo pmset -a standbydelay 86400
 # finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons
 defaults write com.apple.finder QuitMenuItem -bool true
 
-# finder: disable window animations and Get Info animations
-defaults write com.apple.finder DisableAllAnimations -bool true
-
 # set Desktop as the default location for new Finder windows
 # for other paths, use `PfLo` and `file:///full/path/here/`
 # defaults write com.apple.finder NewWindowTarget -string "PfDe"
@@ -102,9 +91,6 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
 # speed up Mission Control animations
 defaults write com.apple.dock expose-animation-duration -float 0.1
-
-# don’t show recent applications in Dock
-defaults write com.apple.dock show-recents -bool false
 
 # don't auto-hide the Dock
 defaults write com.apple.dock autohide -bool false
