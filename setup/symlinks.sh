@@ -28,6 +28,7 @@ link .gitconfig
 link .gitignore_global
 link .tmux.conf
 link .zshrc
+cp .zshrc.local "$HOME/.zshrc.local"
 link .p10k.zsh
 
 if [[ $OSTYPE == 'darwin'* ]]; then
