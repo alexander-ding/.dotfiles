@@ -11,3 +11,5 @@ echo "- git"
 sudo apt-get -qq install git-all &>/dev/null
 echo "- curl"
 sudo apt-get -qq install curl &>/dev/null
+echo "- unzip"
+sudo apt-get -qq install unzip &>/dev/null

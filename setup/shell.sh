@@ -24,27 +24,21 @@ git clone -q https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUST
 echo "- p10k"
 git clone -q --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k &>/dev/null
 
-echo "- p10k custom fonts"
+echo "- firacode nerd font"
 [[ $OSTYPE == 'darwin'* ]] &&
   font_path=$HOME/Library/Fonts ||
   font_path=$HOME/.local/share/fonts
 
 mkdir -p "$font_path"
-cd $font_path && {
-  curl -sSOL 'https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf'
-  curl -sSOL 'https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf'
-  curl -sSOL 'https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.tttalic.ttf'
-  cd -
-} >/dev/null
 
-echo "- firacode"
-if [[ $OSTYPE == 'darwin'* ]]; then
-  curl -sSLO https://github.com/tonsky/FiraCode/releases/download/6.2/Fira_Code_v6.2.zip
-  unzip -o -q -d $font_path Fira_Code_v6.2.zip
-  rm Fira_Code_v6.2.zip
-else
-  sudo apt-get -qq install fonts-firacode >/dev/null
+curl -sSOL 'https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/FiraCode.zip'
+mkdir FiraCode
+unzip -qq FiraCode.zip -d FiraCode
+rm FiraCode.zip
+cp FiraCode/Fira\ Code\ *\ Nerd\ Font\ Complete\ Mono.ttf "$font_path"
+rm -rf FiraCode
 
+if [[ $OSTYPE != 'darwin'* ]]; then
   # reload font cache
   fc-cache -f
 fi
