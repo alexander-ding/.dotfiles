@@ -67,6 +67,10 @@ unset __conda_setup
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
+# pnpm
+export PNPM_HOME="/Users/alexanderding/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+
 # broot
 source "$HOME/.config/broot/launcher/bash/br"
 
