@@ -1,6 +1,7 @@
 # .dotfiles
 
-This is a central repository of configuration files and setup scripts to configure any fresh 64-bit macOS or Debian environments you have root access for to replicate my workflows.
+This is a central repository of configuration files and setup scripts to configure any fresh 64-bit macOS or Debian environments to replicate my personal dev environment.
+Root access required.
 
 Some goodies include:
 
