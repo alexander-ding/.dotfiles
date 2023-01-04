@@ -101,7 +101,7 @@ source <(kubectl completion zsh)
 ## Aliases
 ##
 
-alias ls='ls -a'
+alias ls='ls --color -a' # enable color and hidden files
 alias timeout="gtimeout"
 alias t="todo.sh"
 alias up="cd .."
