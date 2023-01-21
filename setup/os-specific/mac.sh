@@ -92,8 +92,8 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 # speed up Mission Control animations
 defaults write com.apple.dock expose-animation-duration -float 0.1
 
-# don't auto-hide the Dock
-defaults write com.apple.dock autohide -bool false
+# auto-hide the Dock (to interface with yabai)
+defaults write com.apple.dock autohide -bool true
 
 # disable disk image verification
 defaults write com.apple.frameworks.diskimages skip-verify -bool true
