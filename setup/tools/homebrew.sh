@@ -65,11 +65,12 @@ sudo ln -s "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" "/u
 echo "- docker"
 brew install --cask docker --quiet &>/dev/null
 
-echo "- hammerspoon"
-brew install --cask hammerspoon --quiet &>/dev/null
-
 echo "- karabiner-elements"
 brew install --cask karabiner-elements --quiet &>/dev/null
 
 echo "- hiddenbar"
 brew install --cask hiddenbar --quiet &>/dev/null
+
+echo "- wezterm"
+brew tap wez/wezterm &>/dev/null
+brew install --cask wez/wezterm/wezterm --quiet &>/dev/null

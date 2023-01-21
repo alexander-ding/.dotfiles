@@ -42,7 +42,7 @@ cd "$dir"
 . setup/cleanup.sh
 
 printf "\nAll done! To finish setting up, you need to manually complete the following\n"
-echo "- configure your terminal and IDEs to use Fira Code Nerd Font Mono"
+echo "- configure your terminal and IDEs to use Fira Code Nerd Font Mono (already set up in wezterm)"
 echo "- restart your shell"
 echo "  Simply run \`zsh\`"
 echo "  Instructions: https://github.com/tonsky/FiraCode/wiki#enabling-ligatures"

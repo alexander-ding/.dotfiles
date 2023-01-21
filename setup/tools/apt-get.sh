@@ -74,3 +74,7 @@ sudo apt-get -qq install code &>/dev/null
 
 echo "- docker"
 sudo apt-get -qq install docker &>/dev/null
+
+echo "- wezterm"
+curl -LO https://github.com/wez/wezterm/releases/download/20221119-145034-49b9839f/wezterm-20221119-145034-49b9839f.Ubuntu20.04.deb &>/dev/null
+sudo apt install -y ./wezterm-20221119-145034-49b9839f.Ubuntu20.04.deb &>/dev/null
