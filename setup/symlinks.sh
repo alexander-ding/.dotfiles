@@ -33,7 +33,8 @@ link .zshrc.local
 link .p10k.zsh
 
 if [[ $OSTYPE == 'darwin'* ]]; then
-  link .hammerspoon
+  mkdir -p "$HOME/.config"
+  link .config/karabiner
   link .yabairc
   link .skhdrc
   link .wezterm.lua
