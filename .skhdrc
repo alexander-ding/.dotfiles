@@ -1,6 +1,6 @@
-# alt - return : open -na /opt/homebrew/bin/alacritty
-alt - return : open -na /opt/homebrew/bin/wezterm
-# alt - return : open -na Terminal
+# alt - return : open -a /opt/homebrew/bin/alacritty
+alt - return : open -a /opt/homebrew/bin/wezterm
+# alt - return : open -a Terminal
 alt - c : open -a "Visual Studio Code"
 alt - b : open -a "Google Chrome"
 alt - y : open -a "Spotify"

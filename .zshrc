@@ -1,3 +1,11 @@
+##
+## Enter a tmux session called "main" if we're not already in
+##
+
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  tmux new-session -A -s main
+fi
+
 ## 
 ## P10K instant prompt. Keep near top
 ##
@@ -13,6 +21,9 @@ fi
 # shell configuration
 export LANG=en_US.UTF-8
 export EDITOR='vim'
+
+# vim key binding for terminal
+bindkey -v
 
 # basic executables
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
@@ -84,15 +95,15 @@ plugins=(
     git
     pip
     zsh-autosuggestions
-    zsh-syntax-highlighting
+    vi-mode
+    fast-syntax-highlighting
+    fzf
 )
 
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+VI_MODE_SET_CURSOR=true
 
 source "$ZSH/oh-my-zsh.sh"
-
-# fzf (has to be sourced *after* ZSH)
-[ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
 
 # kubectl
 source <(kubectl completion zsh)
