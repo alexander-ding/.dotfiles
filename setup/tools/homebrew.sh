@@ -25,6 +25,9 @@ mkdir -p "$HOME/.vim/backups"
 mkdir -p "$HOME/.vim/swaps"
 mkdir -p "$HOME/.vim/undo"
 
+echo "- neovim"
+brew install neovim --quiet &>/dev/null
+
 echo "- tmux"
 brew install tmux --quiet &>/dev/null
 git clone -q https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"

@@ -22,3 +22,5 @@ d = diff
 dv = difftool -t vimdiff -y
 [core]
 excludesfile = ~/.gitignore_global
+[push]
+	autoSetupRemote = true

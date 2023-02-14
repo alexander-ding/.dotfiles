@@ -24,6 +24,7 @@ function link {
 
 printf "\nCreating symlinks\n"
 link .vimrc
+link .config/nvim
 link .gitconfig
 link .gitignore_global
 link .tmux.conf
@@ -31,11 +32,11 @@ link .zshrc
 cp .zshrc.local.template .zshrc.local
 link .zshrc.local
 link .p10k.zsh
+link .wezterm.lua
 
 if [[ $OSTYPE == 'darwin'* ]]; then
   mkdir -p "$HOME/.config"
   link .config/karabiner
   link .yabairc
   link .skhdrc
-  link .wezterm.lua
 fi

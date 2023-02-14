@@ -2,7 +2,7 @@
 alt - return : open -a /opt/homebrew/bin/wezterm
 # alt - return : open -a Terminal
 alt - c : open -a "Visual Studio Code"
-alt - b : open -a "Google Chrome"
+alt - b : open -a "Arc"
 alt - y : open -a "Spotify"
 alt - m : open -a "Messages"
 alt - o : open -a "Notion"

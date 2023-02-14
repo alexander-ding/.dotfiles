@@ -28,6 +28,9 @@ mkdir -p "$HOME/.vim/backups"
 mkdir -p "$HOME/.vim/swaps"
 mkdir -p "$HOME/.vim/undo"
 
+echo "- neovim"
+sudo apt-get -qq install neovim >/dev/null
+
 echo "- tmux"
 sudo apt-get -qq install tmux >/dev/null
 git clone -q https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm" &>/dev/null

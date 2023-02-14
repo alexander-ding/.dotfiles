@@ -6,7 +6,7 @@ if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] &&
   tmux new-session -A -s main
 fi
 
-## 
+##
 ## P10K instant prompt. Keep near top
 ##
 
@@ -25,13 +25,16 @@ export EDITOR='vim'
 # vim key binding for terminal
 bindkey -v
 
+# eliminate escape key delay
+KEYTIMEOUT=1
+
 # basic executables
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
 
 # homebrew
 export PATH="/opt/homebrew/bin:$PATH"
 which brew &>/dev/null
-if [[ $? -eq 0 ]]; then 
+if [[ $? -eq 0 ]]; then
     FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}" # for brew shell completion
 fi
 
@@ -45,6 +48,7 @@ export PATH="$PATH:$CMAKE_MODULE_PATH/bin"
 
 # go (managed by gvm)
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+export PATH="$PATH:$HOME/go/bin"
 
 # julia (managed by juliaup)
 export PATH="$PATH:$HOME/.juliaup/bin"

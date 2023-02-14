@@ -90,7 +90,7 @@ vmap <Leader>Y "+Y
 vmap <Leader>d "+d
 nmap <Leader>P "+P
 nmap <Leader>p "_dP
-           
+
 "
 " Plugins (I use VimPlug)
 "
