@@ -26,15 +26,20 @@ cmp.setup {
     end,
     ["<CR>"] = cmp.mapping.confirm { select = true },
     ["<C-e>"] = cmp.mapping.abort(),
-    ["<Esc>"] = cmp.mapping.close(),
+    ["<Esc>"] = function()
+      cmp.mapping.close()
+      vim.cmd[[stopinsert]] -- enter normal mode
+    end,
     ["<C-b>"] = cmp.mapping.scroll_docs(-4),
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
   },
   sources = {
-    { name = "nvim_lsp" }, -- For nvim-lsp
+    { name = "nvim_lsp", entry_filter = function(entry, ctx) -- Don't suggest words
+        return require("cmp").lsp.CompletionItemKind.Text ~= entry:get_kind()
+      end }, -- For nvim-lsp
     { name = "ultisnips" }, -- For ultisnips user.
     { name = "path" }, -- for path completion
-    { name = "buffer", keyword_length = 2 }, -- for buffer word completion
+    { name = "buffer", keyword_length = 4 }, -- for buffer word completion
     { name = "emoji", insert = true }, -- emoji completion
   },
   completion = {

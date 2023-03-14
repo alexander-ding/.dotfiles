@@ -180,5 +180,10 @@ set diffopt+=internal,indent-heuristic,algorithm:histogram
 
 set virtualedit=onemore
 
-set nowrap  " do no wrap
+set wrap  " turn on wrap
+set breakindent
+set breakindentopt=sbr
+" I use a unicode curly array with a <backslash><space>
+set showbreak=↪>\
+
 set noruler
