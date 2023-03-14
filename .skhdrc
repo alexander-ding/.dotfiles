@@ -35,8 +35,10 @@ alt - 7 : yabai -m space --focus 7
 alt - 8 : yabai -m space --focus 8
 alt - 9 : yabai -m space --focus 9
 alt - 0 : yabai -m space --focus 10
+alt - 0x1E: yabai -m space --focus next
+alt - 0x21: yabai -m space --focus prev
 
-shift + alt - 1 : yabai -m window --space  1 
+shift + alt - 1 : yabai -m window --space  1
 shift + alt - 2 : yabai -m window --space  2
 shift + alt - 3 : yabai -m window --space  3
 shift + alt - 4 : yabai -m window --space  4
@@ -47,7 +49,7 @@ shift + alt - 8 : yabai -m window --space  8
 shift + alt - 9 : yabai -m window --space  9
 shift + alt - 0 : yabai -m window --space 10
 
-# stack 
+# stack
 alt + ctrl - n : yabai -m window --focus stack.next || yabai -m window --focus stack.first
 alt + ctrl - p : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
 

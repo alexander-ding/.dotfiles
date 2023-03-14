@@ -20,10 +20,7 @@ fi
 
 # shell configuration
 export LANG=en_US.UTF-8
-export EDITOR='vim'
-
-# vim key binding for terminal
-bindkey -v
+export EDITOR='nvim'
 
 # eliminate escape key delay
 KEYTIMEOUT=1
@@ -99,13 +96,17 @@ plugins=(
     git
     pip
     zsh-autosuggestions
-    vi-mode
     fast-syntax-highlighting
     fzf
 )
 
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 VI_MODE_SET_CURSOR=true
+export FZF_DEFAULT_COMMAND="fd -L --type f --hidden --exclude .git"
+
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '\C-x\C-e' edit-command-line
 
 source "$ZSH/oh-my-zsh.sh"
 

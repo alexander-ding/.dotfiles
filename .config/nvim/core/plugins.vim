@@ -35,6 +35,8 @@ let g:UltiSnipsSnippetDirectories=['UltiSnips', 'my_snippets']
 command! -nargs=0 StartVlime call jobstart(printf("sbcl --load %s/vlime/lisp/start-vlime.lisp", g:package_home))
 
 """""""""""""""""""""""""""""LeaderF settings"""""""""""""""""""""
+" Follow symlinks
+let g:Lf_FollowLinks = 1
 " Do not use cache file
 let g:Lf_UseCache = 0
 " Refresh each time we call leaderf
