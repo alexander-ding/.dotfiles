@@ -124,6 +124,7 @@ alias up="cd .."
 alias k="kubectl"
 alias ctx="kubie ctx"
 alias ens="kubie ns"
+alias o="open -a"
 
 ##
 ## Source p10k, keep near bottom
