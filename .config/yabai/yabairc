@@ -52,7 +52,7 @@ yabai -m config mouse_drop_action swap
 yabai -m config window_shadow float
 
 # status bar
-yabai -m config external_bar all:26:0
+yabai -m config external_bar all:40:0
 
 # general space settings
 yabai -m config layout bsp
@@ -65,6 +65,11 @@ yabai -m config window_gap 0
 # make desktop 5 stack (vscode)
 yabai -m space 5 --layout stack
 yabai -m space 6 --layout stack
+
+# signals for sketchybar
+yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
+yabai -m signal --add event=window_destroyed action="sketchybar --trigger windows_on_spaces"
+yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
 
 # added settings
 echo "yabai configuration loaded.."

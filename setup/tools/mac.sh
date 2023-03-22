@@ -77,3 +77,16 @@ brew install --cask hiddenbar --quiet &>/dev/null
 echo "- wezterm"
 brew tap wez/wezterm &>/dev/null
 brew install --cask wez/wezterm/wezterm --quiet &>/dev/null
+
+echo "- sketchybar"
+brew tap FelixKratz/formulae &>/dev/null
+brew install sketchybar --quiet &>/dev/null
+brew services start sketchybar &>/dev/null
+
+echo "- hack nerd font"
+brew tap homebrew/cask-fonts &>/dev/null
+brew install --cask font-hack-nerd-font --quiet &>/dev/nulll
+
+echo "- skhd"
+brew install koekeishiya/formulae/skhd --quiet &>/dev/null
+brew services start skhd &>/dev/null

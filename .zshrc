@@ -25,6 +25,9 @@ export EDITOR='nvim'
 # eliminate escape key delay
 KEYTIMEOUT=1
 
+# glob dotfiles for tab completion
+setopt globdots
+
 # basic executables
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
 

@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 printf "\nExecuting macOS-specific setups\n"
+
+echo "- sketchybar font"
+curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v1.0.3/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf
+
 echo "- setting sensible defaults"
 
 # credit: most of this comes from https://github.com/mathiasbynens/dotfiles/blob/main/.macos
