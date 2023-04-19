@@ -1,12 +1,7 @@
 #!/bin/bash
 
 update() {
-  source "$HOME/.config/sketchybar/colors.sh"
-  COLOR=$BACKGROUND_2
-  if [ "$SELECTED" = "true" ]; then
-    COLOR=$GREY
-  fi
-  sketchybar --set $NAME icon.highlight=$SELECTED label.highlight="$SELECTED" background.border_color=$COLOR
+  sketchybar --set $NAME icon.highlight=$SELECTED label.highlight="$SELECTED"
 }
 
 mouse_clicked() {
@@ -19,12 +14,16 @@ mouse_clicked() {
 }
 
 case "$SENDER" in
-  "mouse.entered") mouse_entered
+"mouse.entered")
+  mouse_entered
   ;;
-  "mouse.exited") mouse_exited
+"mouse.exited")
+  mouse_exited
   ;;
-  "mouse.clicked") mouse_clicked
+"mouse.clicked")
+  mouse_clicked
   ;;
-  *) update
+*)
+  update
   ;;
 esac

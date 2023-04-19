@@ -14,19 +14,18 @@ for i in "${!SPACE_ICONS[@]}"; do
     associated_space=$sid
     icon="${SPACE_ICONS[i]}"
     icon.padding_left=10
-    icon.padding_right=10
+    icon.padding_right=2
     padding_left=2
     padding_right=2
-    label.padding_right=20
-    icon.color=$WHITE
-    icon.highlight_color=$RED
-    label.color=$GREY
-    label.highlight_color=$WHITE
-    label.font="sketchybar-app-font:Regular:16.0"
+    label.padding_right=16
+    icon.color=0xffcad3f5
+    icon.highlight_color=0xffed8796
+    label.color=0xff939ab7
+    label.highlight_color=0xffcad3f5
+    label.font="sketchybar-app-font:Regular:14.0"
     label.y_offset=-1
-    background.color=$BACKGROUND_1
-    background.border_color=$BACKGROUND_2
-    background.drawing=off
+    background.color=0x4fa5adcb
+    background.drawing=on
     label.drawing=off
     script="$PLUGIN_DIR/space.sh"
   )
@@ -36,25 +35,19 @@ for i in "${!SPACE_ICONS[@]}"; do
     --subscribe space.$sid mouse.clicked
 done
 
-spaces_bracket=(
-  background.color=$BACKGROUND_1
-  background.border_color=$BACKGROUND_2
-  background.border_width=2
-)
-
-separator=(
-  icon=􀆊
-  icon.font="$FONT:Heavy:16.0"
-  padding_left=10
-  padding_right=8
-  label.drawing=off
-  associated_display=active
+new_space=(
+  icon=󰼍
+  icon.font="$FONT:Bold:15.0"
+  icon.color=0xff24273a
+  icon.drawing=on
+  icon.padding_right=0
+  background.padding_left=4
+  background.padding_right=10
+  background.color=0xfff5a97f
   click_script='yabai -m space --create && sketchybar --trigger space_change'
-  icon.color=$WHITE
 )
 
 sketchybar --add bracket spaces_bracket '/space\..*/' \
-  --set spaces_bracket "${spaces_bracket[@]}" \
   \
-  --add item separator left \
-  --set separator "${separator[@]}"
+  --add item new_space left \
+  --set new_space "${new_space[@]}"
