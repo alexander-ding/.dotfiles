@@ -113,6 +113,11 @@ bindkey '\C-x\C-e' edit-command-line
 
 source "$ZSH/oh-my-zsh.sh"
 
+# oh-my-zsh sets a strange default of special-dirs being true
+# this causes . and .. to be suggested during tab completion
+# explicitly disabling here
+zstyle ':completion:*' special-dirs false
+
 # kubectl
 source <(kubectl completion zsh)
 
