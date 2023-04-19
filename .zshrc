@@ -128,6 +128,7 @@ alias k="kubectl"
 alias ctx="kubie ctx"
 alias ens="kubie ns"
 alias o="open -a"
+alias vim="nvim"
 
 ##
 ## Source p10k, keep near bottom
