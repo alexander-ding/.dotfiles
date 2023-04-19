@@ -60,6 +60,9 @@ brew install kubie --quiet &>/dev/null
 echo "- pnpm"
 brew install pnpm --quiet &>/dev/null
 
+echo "- jq"
+brew install jq --quiet &>/dev/null
+
 echo "- vscode"
 brew install --cask visual-studio-code --quiet &>/dev/null
 sudo mkdir -p /usr/local/bin
