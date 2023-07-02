@@ -29,9 +29,8 @@ link .config/wezterm
 link .gitconfig
 link .gitignore_global
 link .tmux.conf
+link .zshrc.lts
 link .zshrc
-cp .zshrc.local.template .zshrc.local
-link .zshrc.local
 link .p10k.zsh
 
 if [[ $OSTYPE == 'darwin'* ]]; then
