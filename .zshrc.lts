@@ -1,4 +1,9 @@
 ##
+## This files contains the long term support, committed .zshrc content. Experimental content should go to .zshrc
+## and be migrated here after baking into my workflow.
+##
+
+##
 ## Enter a tmux session called "main" if we're not already in
 ##
 
@@ -147,11 +152,3 @@ eval "$(direnv hook zsh)"
 # To customize prompt, run `p10k configure` or edit $HOME/.p10k.zsh.
 [[ ! -f "$HOME/.p10k.zsh" ]] || source "$HOME/.p10k.zsh"
 
-##
-## Source per-machine local configurations
-##
-
-source "$HOME/.zshrc.local"
-
-# opam configuration
-[[ ! -r /Users/alexanderding/.opam/opam-init/init.zsh ]] || source /Users/alexanderding/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
