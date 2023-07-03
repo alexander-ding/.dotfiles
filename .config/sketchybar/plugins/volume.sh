@@ -1,5 +1,9 @@
 #!/usr/bin/env sh
 
+if [ $SENDER = "unlock" ]; then
+  "$HOME/.config/skhd/switch_audio.sh" mute-if-builtin
+fi
+
 case ${INFO} in
 [6-9][0-9] | 100)
   ICON="􀊩"
@@ -16,5 +20,5 @@ case ${INFO} in
 esac
 
 # Volume Icons
-
-sketchybar --set $NAME icon=$ICON icon.padding_right=$ICON_PADDING_RIGHT
+OUTPUT_NAME=$($HOME/.config/skhd/switch_audio.sh current-output)
+sketchybar --set $NAME icon=$ICON icon.padding_right=$ICON_PADDING_RIGHT label="$OUTPUT_NAME"

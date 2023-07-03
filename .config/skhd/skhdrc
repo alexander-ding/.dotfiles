@@ -28,7 +28,7 @@ alt - l : yabai -m window --focus east
 # toggle window modes
 shift + alt - s : yabai -m window --toggle sticky
 shift + alt - d : yabai -m window --toggle float
-shift + alt - f : yabai -m window --toggle zoom-fullscreen
+shift + alt - f : yabai -m window --toggle native-fullscreen
 
 # shift workspaces
 alt - tab : yabai -m space --focus recent
@@ -67,3 +67,13 @@ ctrl + alt - l : $HOME/.config/yabai/stack.sh east; sketchybar --trigger window_
 ctrl + alt - n : yabai -m window --focus stack.next || yabai -m window --focus stack.first
 ctrl + alt - p : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
 
+# audio control
+fn - 0x32: $HOME/.config/skhd/switch_audio.sh mute-toggle # fn - ~
+fn - 1: $HOME/.config/skhd/switch_audio.sh builtin && $HOME/.config/skhd/switch_audio.sh unmute
+fn + shift - 1: $HOME/.config/skhd/switch_audio.sh builtin && $HOME/.config/skhd/switch_audio.sh mute
+fn - 2: $HOME/.config/skhd/switch_audio.sh airpods && $HOME/.config/skhd/switch_audio.sh unmute
+fn + shift - 2: $HOME/.config/skhd/switch_audio.sh airpods && $HOME/.config/skhd/switch_audio.sh mute
+
+fn - space: osascript -e 'tell application "Spotify" to playpause'
+fn - j: echo hi && osascript -e 'tell application "Spotify" to play previous track'
+fn - k: echo hi && osascript -e 'tell application "Spotify" to play next track'

@@ -44,6 +44,9 @@ echo "- broot"
 cargo install -q broot
 broot --install >/dev/null
 
+echo "- fd"
+sudo apt-get -qq install fd >/dev/null
+
 echo "- fzf"
 git clone -q --depth 1 https://github.com/junegunn/fzf.git ~/.fzf &>/dev/null
 ~/.fzf/install --all &>/dev/null
@@ -65,6 +68,13 @@ cargo install -q kubie
 
 echo "- pnpm"
 curl -fsSL https://get.pnpm.io/install.sh | sh - &>/dev/null
+
+echo "- espanso"
+curl -fsSL https://github.com/federico-terzi/espanso/releases/download/v2.1.8/espanso-debian-x11-amd64.deb
+sudo apt-get -qq install ./espanso-debian-x11-amd64.deb
+rm espanso-debian-x11-amd64.deb
+espanso service register &>/dev/null
+espanso start &>/dev/null
 
 echo "- vscode"
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor >packages.microsoft.gpg

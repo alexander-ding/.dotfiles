@@ -41,6 +41,9 @@ echo "- broot"
 brew install broot --quiet &>/dev/null
 broot --install >/dev/null
 
+echo "- fd"
+brew install fd --quiet &>/dev/null
+
 echo "- fzf"
 brew install fzf --quiet &>/dev/null
 "$(brew --prefix)/opt/fzf/install" --all &>/dev/null
@@ -63,6 +66,10 @@ brew install pnpm --quiet &>/dev/null
 echo "- jq"
 brew install jq --quiet &>/dev/null
 
+echo "- espanso"
+brew tap espanso/espanso --quiet
+brew install espanso --quiet &>/dev/null
+
 echo "- vscode"
 brew install --cask visual-studio-code --quiet &>/dev/null
 sudo mkdir -p /usr/local/bin
@@ -71,15 +78,12 @@ sudo ln -s "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" "/u
 echo "- docker"
 brew install --cask docker --quiet &>/dev/null
 
-echo "- karabiner-elements"
-brew install --cask karabiner-elements --quiet &>/dev/null
-
-echo "- hiddenbar"
-brew install --cask hiddenbar --quiet &>/dev/null
-
 echo "- wezterm"
 brew tap wez/wezterm &>/dev/null
 brew install --cask wez/wezterm/wezterm --quiet &>/dev/null
+
+echo "- karabiner-elements"
+brew install --cask karabiner-elements --quiet &>/dev/null
 
 echo "- sketchybar"
 brew tap FelixKratz/formulae &>/dev/null

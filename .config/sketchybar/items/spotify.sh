@@ -1,15 +1,6 @@
 #!/usr/bin/env bash
 
 SPOTIFY_EVENT="com.spotify.client.PlaybackStateChanged"
-sketchybar --add item spotify_playlist center \
-  --set spotify_playlist \
-  background.color=0xaa24273a \
-  icon= \
-  icon.color=0xffc6a0f6 \
-  icon.font="$FONT:Bold:19.0" \
-  label.drawing=off \
-  script="$PLUGIN_DIR/spotify_playlist.sh" \
-  --subscribe spotify_playlist mouse.clicked
 
 sketchybar --add event spotify_change $SPOTIFY_EVENT \
   --add item spotify center \
