@@ -1,5 +1,5 @@
 case $@ in
-"Arc")
+"Goolge Chrome")
   icon_result=":google_chrome:"
   ;;
 "Brave Browser")

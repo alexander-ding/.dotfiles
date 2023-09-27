@@ -4,14 +4,14 @@
 alt - return : open -a /opt/homebrew/bin/wezterm
 # alt - return : open -a Terminal
 alt - c : open -a "Visual Studio Code"
-alt - b : open -a "Arc"
+alt - b : open -a "Google Chrome"
 alt - y : open -a "Spotify"
 alt - m : open -a "Messages"
 alt - o : open -a "Notion"
 alt - d : open -a "Discord"
 
-# restart yabai
-ctrl + alt + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+# restart yabai and skhd
+ctrl + alt + cmd - r : skhd --restart-service && yabai --restart-service
 
 # swap window
 shift + alt - h : yabai -m window --swap west
@@ -73,6 +73,8 @@ fn - 1: $HOME/.config/skhd/switch_audio.sh builtin && $HOME/.config/skhd/switch_
 fn + shift - 1: $HOME/.config/skhd/switch_audio.sh builtin && $HOME/.config/skhd/switch_audio.sh mute
 fn - 2: $HOME/.config/skhd/switch_audio.sh airpods && $HOME/.config/skhd/switch_audio.sh unmute
 fn + shift - 2: $HOME/.config/skhd/switch_audio.sh airpods && $HOME/.config/skhd/switch_audio.sh mute
+fn - 3: $HOME/.config/skhd/switch_audio.sh dock && $HOME/.config/skhd/switch_audio.sh unmute
+fn + shift - 3: $HOME/.config/skhd/switch_audio.sh dock && $HOME/.config/skhd/switch_audio.sh mute
 
 fn - space: osascript -e 'tell application "Spotify" to playpause'
 fn - j: echo hi && osascript -e 'tell application "Spotify" to play previous track'

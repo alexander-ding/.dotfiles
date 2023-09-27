@@ -12,12 +12,18 @@ BUILTIN_OUTPUT_UID="BuiltInSpeakerDevice"
 AIRPODS_UID=$(SwitchAudioSource -a -f json | grep -e 'AirPods Pro' | jq -r .uid | tr ":" "\n" | head -n 1)
 AIRPODS_INPUT_UID="$AIRPODS_UID:input"
 AIRPODS_OUTPUT_UID="$AIRPODS_UID:output"
+DOCK_UID=$(SwitchAudioSource -a -f json | grep -e 'SubosenAudio' | jq -r .uid | tr ":" "\n" | head -n 1)
+DOCK_INPUT_UID="$DOCK_UID:input"
+DOCK_OUTPUT_UID="$DOCK_UID:output"
 case $1 in
   builtin)
     SwitchAudioSource -t input -u "$BUILTIN_INPUT_UID" && SwitchAudioSource -t output -u "$BUILTIN_OUTPUT_UID"
     ;;
   airpods)
     SwitchAudioSource -t input -u "$AIRPODS_INPUT_UID" && SwitchAudioSource -t output -u "$AIRPODS_OUTPUT_UID"
+    ;;
+  dock)
+    SwitchAudioSource -t input -u "$DOCK_INPUT_UID" && SwitchAudioSource -t output -u "$DOCK_OUTPUT_UID"
     ;;
   mute)
     SwitchAudioSource -t output -m mute

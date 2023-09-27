@@ -24,9 +24,8 @@ yabai -m config focus_follows_mouse off
 yabai -m config window_origin_display default
 yabai -m config window_placement second_child
 yabai -m config window_topmost off
-yabai -m config window_shadow float
 yabai -m config window_opacity off
-yabai -m config window_border on
+yabai -m config window_border off
 yabai -m config window_border_width 2
 yabai -m config active_window_border_color 0xcc63c8f8
 yabai -m config insert_feedback_color 0xE02d74da
@@ -36,7 +35,6 @@ yabai -m config mouse_modifier fn
 yabai -m config mouse_action1 move
 yabai -m config mouse_action2 resize
 yabai -m config mouse_drop_action swap
-yabai -m config window_shadow float
 yabai -m config window_border_blur off
 
 # status bar
@@ -44,11 +42,11 @@ yabai -m config external_bar all:32:0
 
 # general space settings
 yabai -m config layout bsp
-yabai -m config top_padding 4
-yabai -m config bottom_padding 4
-yabai -m config left_padding 4
-yabai -m config right_padding 4
-yabai -m config window_gap 4
+yabai -m config top_padding 2
+yabai -m config bottom_padding 2
+yabai -m config left_padding 2
+yabai -m config right_padding 2
+yabai -m config window_gap 2
 
 # signals for sketchybar
 yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
